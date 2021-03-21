@@ -11,14 +11,14 @@ RUN mkdir /logs \
         && mkdir /scripts \
         && cd /scripts \
         && git init \
-        && git remote add -f origin https://github.com/haygcao/UnicomPlus.git \
+        && git remote add -f origin https://github.com/haygcao/new.git \
         && git config core.sparsecheckout true \
         && echo UnicomTask/* >> /scripts/.git/info/sparse-checkout \
         && git pull origin master \
         && cp /scripts/UnicomTask/docker_entrypoint.sh /usr/local/bin \
         && chmod +x /usr/local/bin/docker_entrypoint.sh
 
-RUN git clone https://github.com/srcrs/UnicomTask.git /UnicomTask \
+RUN git clone https://github.com/haygcao/UnicomPlus.git /UnicomTask \
         && cd /UnicomTask \
         && git checkout main \
         && pip3 install --upgrade pip \
