@@ -11,7 +11,7 @@ RUN mkdir /logs \
         && mkdir /scripts \
         && cd /scripts \
         && git init \
-        && git remote add -f origin https://github.com/FKPYW/SomeScripts.git \
+        && git remote add -f origin https://github.com/haygcao/UnicomPlus.git \
         && git config core.sparsecheckout true \
         && echo UnicomTask/* >> /scripts/.git/info/sparse-checkout \
         && git pull origin master \
@@ -27,6 +27,7 @@ RUN git clone https://github.com/srcrs/UnicomTask.git /UnicomTask \
 
 RUN mkdir /DoUnicomTask \
         && cp /UnicomTask/*.py /DoUnicomTask \
+        && cp -r /UnicomTask/TaskList /DoUnicomTask \
         && cp /UnicomTask/requirements.txt /DoUnicomTask
 
 WORKDIR /DoUnicomTask
